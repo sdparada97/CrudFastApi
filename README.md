@@ -68,5 +68,7 @@ Esta APIRest esta construida con FastApi y MongoDB, todo el ambiente esta conten
 ## Evidencias
 
 ### Swagger API-REST
+![image](https://user-images.githubusercontent.com/49702755/189274516-b9982ef2-5c90-4ab5-9fb0-ae5fe87740ef.png)
 
 ### VScode Dockerizado
+![image](https://user-images.githubusercontent.com/49702755/189274590-fc2784ca-acfb-498d-a042-38d8e719b378.png)
