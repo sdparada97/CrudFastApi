@@ -2,8 +2,6 @@ from enum import IntEnum
 from typing import Optional
 from pydantic import BaseModel,conlist
 
-from models.skill import Skill
-
 class CurrencyEnum(IntEnum):
     COP = 1
     USD = 2
@@ -11,7 +9,7 @@ class CurrencyEnum(IntEnum):
 class Vacante(BaseModel):
     vancancy_id: Optional[str]
     position_name: str
-    company_name: CurrencyEnum
-    currency: str
+    company_name: str
+    currency: Optional[CurrencyEnum]
     vancancy_link: str
-    required_skills: conlist(Skill, min_items=1)
+    required_skills: conlist(dict, min_items=1)

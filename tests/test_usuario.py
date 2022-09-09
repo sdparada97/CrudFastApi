@@ -1,6 +1,6 @@
 from fastapi.testclient import TestClient
 
-from routes.usuario import app
+from app.routes.usuario import app
 
 client = TestClient(app)
 
