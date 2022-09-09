@@ -1,12 +1,12 @@
 def userEntity(usuario) -> dict:
     return {
-        "UserId": usuario["id"],
-        "FirstName": usuario["FirstName"],
-        "LastName": usuario["LastName"],
-        "Email": usuario["Email"],
-        "YearsPreviousExperience": usuario["YearsPreviousExperience"],
+        "user_id": str(usuario["_id"]),
+        "first_name": usuario["first_name"],
+        "last_name": usuario["last_name"],
+        "email": usuario["email"],
+        "years_previous_experience": usuario["years_previous_experience"],
         "skills":usuario["skills"]
     }
 
 def usersEntity(usuarios) -> list:
-    [userEntity(usuario) for usuario in usuarios]
+    return [userEntity(usuario) for usuario in usuarios]

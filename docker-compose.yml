@@ -1,29 +1,30 @@
 version: '3.9'
 
 services:
-  crudfastapi:
+  app:
+    container_name: app
     build: .
     env_file:
       - .env
-    command: bash -c "
-      uvicorn app.app:app
-      --host 0.0.0.0 --port 8989
-      --reload
-      "
+    command: bash -c " uvicorn app.app:app --host 0.0.0.0 --port 8989 --reload"
     volumes:
       - .:/app
     ports:
       - "8989:8989"
     depends_on:
-      - mongodb
+      - mongo
 
-  mongodb:
+  mongo:
     image: mongo
     env_file:
       - .env
     ports:
-      - "27017:27017"
+      - "27018:27017"
+    volumes:
+      - mongo:/data/db
     environment:
       - "MONGO_INITDB_DATABASE=${MONGO_DB}"
       - "MONGO_INITDB_ROOT_USERNAME=${MONGO_USER}"
       - "MONGO_INITDB_ROOT_PASSWORD=${MONGO_PASS}"
+volumes:
+  mongo:
